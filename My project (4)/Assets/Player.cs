@@ -11,12 +11,12 @@ public class Player : MonoBehaviour
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
-        animator.SetFloat("Speed", agent.velocity.magnitude);
+       // animator.SetFloat("Speed", agent.velocity.magnitude);
     }
 
     public void Move(EventArgs args)

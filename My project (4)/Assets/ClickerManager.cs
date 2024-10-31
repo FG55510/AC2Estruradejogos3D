@@ -1,9 +1,9 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class MouseManager : MonoBehaviour
+public class ClickerManager : MonoBehaviour
 {
     public EventEnviroment OnClickEnviroment;
     public LayerMask maskInteractable;
@@ -19,43 +19,43 @@ public class MouseManager : MonoBehaviour
         RaycastHit hit;
         //Debug.DrawRay(ray.origin, ray.direction * 100, Color.red);
 
-        if(Physics.Raycast(ray, out hit, 100, maskInteractable))
+        if (Physics.Raycast(ray, out hit, 100, maskInteractable))
         {
             switch (hit.collider.tag)
             {
-                case Tags.FLOOR:
+                case "Floor":
                     Cursor.SetCursor(target, new Vector2(16, 16), CursorMode.Auto);
                     break;
-                case Tags.ROCK:
+                case "Rock":
                     Cursor.SetCursor(pointer, new Vector2(0, 0), CursorMode.Auto);
                     break;
-                case Tags.DOORWAY:
+                case "Door":
                     Cursor.SetCursor(doorWay, new Vector2(16, 16), CursorMode.Auto);
                     break;
-                case Tags.DOOR_BACK:
+                case "Doorback":
                     Cursor.SetCursor(doorBack, new Vector2(16, 16), CursorMode.Auto);
                     break;
                 default:
                     Cursor.SetCursor(pointer, new Vector2(16, 16), CursorMode.Auto);
                     break;
             }
-            
+
             if (Input.GetMouseButtonDown(0))
             {
                 EventArgs args;
                 switch (hit.collider.tag)
                 {
-                    case Tags.FLOOR:
+                    case "Floor":
                         args = new EventArgs();
                         args.position = hit.point;
                         OnClickEnviroment.Invoke(args);
                         break;
-                    case Tags.DOORWAY:
+                    case "Door":
                         args = new EventArgs();
                         args.position = hit.collider.GetComponent<Door>().destination;
                         OnClickEnviroment.Invoke(args);
                         break;
-                    case Tags.DOOR_BACK:
+                    case "DoorBack":
                         args = new EventArgs();
                         args.position = hit.collider.GetComponent<Door>().destination;
                         OnClickEnviroment.Invoke(args);
@@ -77,3 +77,4 @@ public class EventArgs
 {
     public Vector3 position;
 }
+
