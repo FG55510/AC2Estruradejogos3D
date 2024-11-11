@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +17,14 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+
+   public UnityEvent<int> Playerpegoulivro;
+
+    public UnityEvent PlayerResetou;
+
+    public UnityEvent PlayerDeath;
+
+    public UnityEvent PlayerPegouCristal;
     // Start is called before the first frame update
     void Start()
     {
