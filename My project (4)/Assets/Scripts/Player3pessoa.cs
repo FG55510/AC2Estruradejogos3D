@@ -27,6 +27,7 @@ public class Player3pessoa : MonoBehaviour
     {
         hor = Input.GetAxis("Horizontal");
         ver = Input.GetAxis("Vertical");
+        animator.SetFloat("Speed", rb.velocity.magnitude);
 
     }
 
@@ -44,8 +45,7 @@ public class Player3pessoa : MonoBehaviour
         {
             rb.velocity = rb.velocity.normalized * maxSpeed;
         }
-
-        animator.SetFloat("Speed", rb.velocity.magnitude);
+ 
     }
 
 }
