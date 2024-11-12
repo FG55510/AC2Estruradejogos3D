@@ -8,6 +8,7 @@ public class Player3pessoa : MonoBehaviour
     public Transform freelook;
     public float force;
     public float maxSpeed = 5f;
+    public float smoothingFactor;
 
     Rigidbody rb;
     float hor;
@@ -25,9 +26,12 @@ public class Player3pessoa : MonoBehaviour
 
     private void Update()
     {
+        
+
         hor = Input.GetAxis("Horizontal");
         ver = Input.GetAxis("Vertical");
-       // animator.SetFloat("Speed", rb.velocity.magnitude);
+        float currentSpeed = Mathf.Lerp(animator.GetFloat("Speed"), rb.velocity.magnitude, Time.deltaTime * smoothingFactor);
+        animator.SetFloat("Speed", currentSpeed);
 
     }
 

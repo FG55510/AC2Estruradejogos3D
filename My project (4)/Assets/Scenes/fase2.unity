@@ -450,6 +450,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5447768829328557966, guid: 7a9c2872915ad414e83307c9864abb76, type: 3}
   m_PrefabInstance: {fileID: 89067682}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &90787285 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4586660233319608086, guid: 729deec6e080cfa469aea735d7c78644, type: 3}
+  m_PrefabInstance: {fileID: 753354110}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &94538087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3249,6 +3254,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6063327808818567580, guid: 729deec6e080cfa469aea735d7c78644, type: 3}
   m_PrefabInstance: {fileID: 753354110}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &542856431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90787285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d899d813629604f47ac6f88ca1ac4e52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  livrosnecessarios: 2
+  livrospegos: 0
 --- !u!4 &564089737 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 445804814120818144, guid: cc4abe4a46c96ff4dba4cda6f58f0ad1, type: 3}
@@ -4047,7 +4066,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4586660233319608086, guid: 729deec6e080cfa469aea735d7c78644, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 542856431}
   m_SourcePrefab: {fileID: 100100000, guid: 729deec6e080cfa469aea735d7c78644, type: 3}
 --- !u!1 &769321684
 GameObject:
@@ -5008,7 +5030,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 929359284}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.69603264, y: 0.19127803, z: -0.02111122, w: 0.69174105}
+  m_LocalRotation: {x: 0.69603264, y: 0.1912781, z: -0.021111244, w: 0.69174105}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10956,7 +10978,11 @@ PrefabInstance:
       objectReference: {fileID: 1308883767}
     - target: {fileID: 6579847628761887988, guid: 780ddf87b000c1a4896fb39407a3e0df, type: 3}
       propertyPath: maxSpeed
-      value: 180
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 6579847628761887988, guid: 780ddf87b000c1a4896fb39407a3e0df, type: 3}
+      propertyPath: smoothingFactor
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
