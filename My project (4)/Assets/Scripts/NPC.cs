@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class NPC : MonoBehaviour
 {
-    public Player player;
+    public Transform player;
     public float startSpeed = 2;
     
     public List<GameObject> points;
