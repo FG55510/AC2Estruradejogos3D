@@ -8,11 +8,11 @@ public class Item : MonoBehaviour, I_Collectable
     public GameObject itemScene;
     public Transform socket;
 
-    SphereCollider myCollider;
+    BoxCollider myCollider;
 
     private void Start()
     {
-        myCollider = GetComponent<SphereCollider>();
+        myCollider = GetComponent<BoxCollider>();
     }
 
     public void Get()

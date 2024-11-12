@@ -60,6 +60,10 @@ public class ClickerManager : MonoBehaviour
                         args.position = hit.collider.GetComponent<Door>().destination;
                         OnClickEnviroment.Invoke(args);
                         break;
+
+                    case "Portal":
+                        GameManager.INSTANCE.ProximaFase();
+                        break;
                 }
             }
         }

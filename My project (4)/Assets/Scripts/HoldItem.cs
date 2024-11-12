@@ -9,14 +9,7 @@ public class HoldItem : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-            if (handItem.Count > 0)
-            {
-                handItem[0].Drop(transform);
-                handItem.RemoveAt(0);
-            }
-        }
+        
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -24,8 +17,14 @@ public class HoldItem : MonoBehaviour
 
         if (other.TryGetComponent<I_Collectable>(out collectableItem))
         {
+            GameManager.INSTANCE.Playerpegoulivro.Invoke(1);
             collectableItem.Get();
             handItem.Add(other.GetComponent<Item>());
+            
         }
+    }
+    void GetItem(Item item)
+    {
+        handItem.Add(item);
     }
 }
