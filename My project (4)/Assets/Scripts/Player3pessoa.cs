@@ -27,7 +27,7 @@ public class Player3pessoa : MonoBehaviour
     {
         hor = Input.GetAxis("Horizontal");
         ver = Input.GetAxis("Vertical");
-        animator.SetFloat("Speed", rb.velocity.magnitude);
+       // animator.SetFloat("Speed", rb.velocity.magnitude);
 
     }
 
