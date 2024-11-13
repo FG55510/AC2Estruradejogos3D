@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class NPC : MonoBehaviour
 {
     public Transform player;
-    public float startSpeed = 2;
+    public float startSpeed = 1;
     
     public List<GameObject> points;
     NavMeshAgent agent;
@@ -14,10 +15,16 @@ public class NPC : MonoBehaviour
 
     int index = 0;
 
-    bool amigo;
-    bool final;
+    [SerializeField] bool amigo;
+   [SerializeField] public bool final;
+
+    public GameObject npc;
+    public Material FriendMaterial;
 
     float DistanciaPlayer;
+
+
+    public Transform endingpos;
 
     void Start()
     {
@@ -34,8 +41,8 @@ public class NPC : MonoBehaviour
         if (DistanciaPlayer < 5 && !final)
         {
             agent.SetDestination(player.transform.position);
-            agent.speed = 4;
-            if (!amigo && DistanciaPlayer <= 0.5)
+            agent.speed = 3f;
+            if (!amigo && DistanciaPlayer <= 1)
             {
                 KillPlayer();
             }
@@ -76,6 +83,8 @@ public class NPC : MonoBehaviour
     private void MudaparaAmigo()
     {
         amigo = true;
+        Renderer npcrend = npc.GetComponent<Renderer>();
+        npcrend.material = FriendMaterial;
     }
 
     private void OnDestroy()
@@ -83,7 +92,7 @@ public class NPC : MonoBehaviour
         GameManager.INSTANCE.PlayerPegouCristal.RemoveListener(MudaparaAmigo);
     }
 
-    private void Attack()
+    public void Attack()
     {
         animator.SetTrigger("Attack");
     }
@@ -92,5 +101,11 @@ public class NPC : MonoBehaviour
     {
         Attack();
         GameManager.INSTANCE.PlayerDeath.Invoke();
+    }
+
+    public void Dance()
+    {
+        agent.Warp(endingpos.position);
+        animator.SetTrigger("Dance");
     }
 }

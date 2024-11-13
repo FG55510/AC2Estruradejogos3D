@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
 
     public UnityEvent PlayerPegouCristal;
 
+    public UnityEvent FimdeJogo;
+
     public string proximafase;
     // Start is called before the first frame update
     void Start()
@@ -37,11 +39,17 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            Scene currentScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(currentScene.name);
+        }
     }
      public void ProximaFase()
     {
         SceneManager.LoadScene(proximafase);
     }
+
+
 
 }

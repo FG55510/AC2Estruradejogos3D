@@ -22,11 +22,12 @@ public class Inimigos : MonoBehaviour
     {
         DistanciaPlayer = Vector3.Distance(player.position, transform.position);
         agent.SetDestination(player.transform.position);
-        agent.speed = 4;
-        if (DistanciaPlayer <= 0.5)
+        agent.speed = 2.5f;
+        if (DistanciaPlayer <= 1)
         {
             KillPlayer();
         }
+        animator.SetFloat("Speed", agent.speed);
     }
 
     private void Attack()

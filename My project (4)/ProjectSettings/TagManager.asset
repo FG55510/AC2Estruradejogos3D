@@ -8,6 +8,11 @@ TagManager:
   - Rock
   - Door
   - DoorBack
+  - Cristal
+  - Point
+  - End
+  - Livro
+  - NPC
   layers:
   - Default
   - TransparentFX

@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7521123394227646867}
   - component: {fileID: 8349454553435914632}
+  - component: {fileID: 3117360547532451550}
   m_Layer: 0
   m_Name: BookItem
-  m_TagString: Untagged
+  m_TagString: Livro
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,6 +50,27 @@ MonoBehaviour:
   itemHand: {fileID: 7642766279316723591}
   itemScene: {fileID: 7093649105395146220}
   socket: {fileID: 0}
+--- !u!65 &3117360547532451550
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6077863525997170320}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.9742832, y: 1, z: 2.413887}
+  m_Center: {x: -0.0028586388, y: 0, z: 0.24959946}
 --- !u!1001 &4942136114803590121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -92,6 +114,10 @@ PrefabInstance:
     - target: {fileID: 2802447175578492421, guid: 25e506ac1b928c04b9670bc84a1bde3d, type: 3}
       propertyPath: m_Name
       value: Book Parent 003 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2802447175578492421, guid: 25e506ac1b928c04b9670bc84a1bde3d, type: 3}
+      propertyPath: m_TagString
+      value: Livro
       objectReference: {fileID: 0}
     - target: {fileID: 5614694006104929415, guid: 25e506ac1b928c04b9670bc84a1bde3d, type: 3}
       propertyPath: m_LocalScale.x
@@ -152,10 +178,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2802447175578492421, guid: 25e506ac1b928c04b9670bc84a1bde3d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1421771686484574206}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25e506ac1b928c04b9670bc84a1bde3d, type: 3}
 --- !u!4 &684152349934581614 stripped
 Transform:
@@ -167,27 +190,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2802447175578492421, guid: 25e506ac1b928c04b9670bc84a1bde3d, type: 3}
   m_PrefabInstance: {fileID: 4942136114803590121}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1421771686484574206
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7093649105395146220}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &5545274382351780226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -235,6 +237,10 @@ PrefabInstance:
     - target: {fileID: 2802447175578492421, guid: 25e506ac1b928c04b9670bc84a1bde3d, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2802447175578492421, guid: 25e506ac1b928c04b9670bc84a1bde3d, type: 3}
+      propertyPath: m_TagString
+      value: Livro
       objectReference: {fileID: 0}
     - target: {fileID: 5614694006104929415, guid: 25e506ac1b928c04b9670bc84a1bde3d, type: 3}
       propertyPath: m_LocalScale.x

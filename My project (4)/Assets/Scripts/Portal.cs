@@ -9,7 +9,7 @@ public class Portal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.INSTANCE.Playerpegoulivro.AddListener(AtivarPortal);
+        
     }
 
     // Update is called once per frame
@@ -18,18 +18,15 @@ public class Portal : MonoBehaviour
         
     }
 
-    void AtivarPortal(int quantidade)
+    private void OnTriggerEnter(Collider other)
     {
-        livrospegos = livrospegos + quantidade;
-        if (livrospegos >= livrosnecessarios)
-        {
-            
-            gameObject.SetActive(false);
-        }
+        GameManager.INSTANCE.ProximaFase();
     }
+
+    
 
     private void OnDestroy()
     {
-        GameManager.INSTANCE.Playerpegoulivro.RemoveListener(AtivarPortal);
+        
     }
 }
