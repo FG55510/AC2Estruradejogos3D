@@ -17,8 +17,18 @@ public class HoldItem : MonoBehaviour
 
         if (other.TryGetComponent<I_Collectable>(out collectableItem))
         {
-            GameManager.INSTANCE.Playerpegoulivro.Invoke(1);
+            if (other.gameObject.CompareTag("Livro"))
+            {
+                GameManager.INSTANCE.Playerpegoulivro.Invoke(1);
+            }
+
+            else if (other.gameObject.CompareTag("Cristal"))
+            {
+                GameManager.INSTANCE.PlayerPegouCristal.Invoke();
+            }
             collectableItem.Get();
+
+            
             handItem.Add(other.GetComponent<Item>());
             
         }

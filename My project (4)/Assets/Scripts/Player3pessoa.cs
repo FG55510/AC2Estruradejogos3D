@@ -31,7 +31,9 @@ public class Player3pessoa : MonoBehaviour
         hor = Input.GetAxis("Horizontal");
         ver = Input.GetAxis("Vertical");
         float currentSpeed = Mathf.Lerp(animator.GetFloat("Speed"), rb.velocity.magnitude, Time.deltaTime * smoothingFactor);
+        float currentDirection = Mathf.Lerp(animator.GetFloat("Direction"), direction.magnitude, Time.deltaTime * smoothingFactor);
         animator.SetFloat("Speed", currentSpeed);
+        animator.SetFloat("Direction", currentDirection);
 
     }
 
@@ -51,5 +53,7 @@ public class Player3pessoa : MonoBehaviour
         }
  
     }
+
+     
 
 }

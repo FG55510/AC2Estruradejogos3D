@@ -30,7 +30,7 @@ public class NPC : MonoBehaviour
     {
          DistanciaPlayer = Vector3.Distance(player.transform.position, transform.position);
 
-
+        
         if (DistanciaPlayer < 5 && !final)
         {
             agent.SetDestination(player.transform.position);
@@ -45,6 +45,7 @@ public class NPC : MonoBehaviour
             agent.SetDestination(points[index].transform.position);
             agent.speed = startSpeed;
         }
+        
         animator.SetFloat("Speed", agent.speed);
     }
 
